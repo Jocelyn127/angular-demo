@@ -1,0 +1,50 @@
+<h2>my-directive works!</h2>
+<h3>ngFor...</h3>
+<ul>
+    <li *ngFor="let item of list, index as i">{{i}} - {{item}}</li>
+</ul>
+<hr>
+<h3>ngIf...</h3>
+<div *ngIf="isShow">show</div>
+<div *ngIf="age>18; else forChild">
+    adult
+</div>
+<ng-template #forChild>
+    child
+</ng-template>
+<div class="box">
+    <button *ngIf="hasMore;else viewMore" (click)="loadMore()">loading</button>
+</div>
+<ng-template #viewMore>
+    view more
+</ng-template>
+<hr>
+<h3>ngStyle...</h3>
+<div class="box">
+    <button [ngStyle]="hasMore?{color: 'green'}:{color: 'red'}" (click)="loadMore()">loading</button>
+</div>
+<hr>
+<h3>ngClass...</h3>
+<div class="box">
+    <button [ngClass]="hasMore? 'color1' : 'color2' " (click)="loadMore()">loading</button>
+</div>
+<hr>
+<h3>ngSwitch...</h3>
+<div [ngSwitch]="userLevel">
+    <div *ngSwitchCase="'normal'">normal</div>
+    <div *ngSwitchCase="'vip'">normal</div>
+    <div *ngSwitchDefault>common</div>
+</div>
+<hr>
+<h3>ngModel...</h3>
+<input placeholder="input your name" [(ngModel)]="uname" (ngModelChange)="doChange()">
+{{uname}}
+
+username: <input type="text" [(ngModel)]="username" (ngModelChange)="validator()">
+<span>{{notice}}</span>
+<hr>
+<h3>custom directive...</h3>
+<div id="div1" appCustomDirective>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae eum est eligendi necessitatibus, nihil architecto porro, ullam quasi, aperiam maxime neque vel reprehenderit mollitia eveniet soluta corrupti dignissimos expedita quas.</div>
+<div id="div2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae eum est eligendi necessitatibus, nihil architecto porro, ullam quasi, aperiam maxime neque vel reprehenderit mollitia eveniet soluta corrupti dignissimos expedita quas.</div>
+<div id="div3" appCustomDirective>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae eum est eligendi necessitatibus, nihil architecto porro, ullam quasi, aperiam maxime neque vel reprehenderit mollitia eveniet soluta corrupti dignissimos expedita quas.</div>
+
