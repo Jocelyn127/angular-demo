@@ -15,6 +15,9 @@ import { ConvertPipe } from './convert.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { MyServiceComponent } from './my-service/my-service.component';
 import { LogService } from './todo-list/todo-list.service';
+import { MyBlogParentComponent } from './my-blog-parent/my-blog-parent.component';
+import { MyChild1Component } from './my-blog-parent/my-child1/my-child1.component';
+import { MyChild2Component } from './my-blog-parent/my-child2/my-child2.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { LogService } from './todo-list/todo-list.service';
     CustomDirectiveDirective,
     TodoListComponent,
     ConvertPipe,
-    MyServiceComponent
+    MyServiceComponent,
+    MyBlogParentComponent,
+    MyChild1Component,
+    MyChild2Component
   ],
   imports: [
     BrowserModule,  // web项目必须导入浏览器模块， 里面包含CommonModule(包含ngIf, ngFor, 不包含ngModel)

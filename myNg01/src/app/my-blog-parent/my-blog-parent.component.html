@@ -1,0 +1,7 @@
+<hr>
+<div class="container">
+    <h2>{{userName}} Blog</h2>
+    <hr>
+    <app-my-child1 (childEmitEvent)="doChildEmit($event)"></app-my-child1>
+    <app-my-child2 [child2Name]="userName"></app-my-child2>
+</div>
