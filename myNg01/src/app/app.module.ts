@@ -12,6 +12,9 @@ import { FormsModule } from '@angular/forms';
 import { CustomDirectiveDirective } from './my-directive/custom-directive.directive';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { ConvertPipe } from './convert.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { MyServiceComponent } from './my-service/my-service.component';
+import { LogService } from './todo-list/todo-list.service';
 
 @NgModule({
   declarations: [
@@ -23,14 +26,16 @@ import { ConvertPipe } from './convert.pipe';
     MyDirectiveComponent,
     CustomDirectiveDirective,
     TodoListComponent,
-    ConvertPipe
+    ConvertPipe,
+    MyServiceComponent
   ],
   imports: [
     BrowserModule,  // web项目必须导入浏览器模块， 里面包含CommonModule(包含ngIf, ngFor, 不包含ngModel)
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [LogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
